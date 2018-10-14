@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>霹雳庄园</title>
+</head>
+<body>
+<div class="bg">
+    <div class="btn btn-android"><a href="url=https://pilimanor.github.io/bin/plzy.apk">下载Android版</a></div>
+    <div class="btn btn-ios"><a href="itms-services://?action=download-manifest&url=https://pilimanor.github.io/config/manifest.plist">下载iPhone版</a></div>
+    <div class="tips">如果微信无法下载，请通过右上角功能中的浏览器打开下载页面</div>
+</div>
+<style>
+    * {
+        margin: 0;
+    }
+    
+    html, body {
+        height: 100%;
+    }
+    
+    .bg {
+        width: 100%;
+        height: 100%;
+        background: url("templates/api/images/bg.png") no-repeat;
+        background-size: 100% 100%;
+    }
+    .bg a{color:#ffffff;}
+    .btn {
+        position: absolute;
+        width: 60%;
+        margin: 30px 0;
+        text-align: center;
+        font-size: 32px;
+        line-height: 32px;
+        padding: 25px 0;
+        border: 2px solid #ffffff;
+        color: #ffffff;
+        font-weight: bold;
+        -webkit-border-radius: 50px;
+        -moz-border-radius: 50px;
+        border-radius: 50px;
+        left: 20%;
+    }
+    
+    .btn-android {
+        top: 45%;
+    }
+    
+    .btn-ios {
+        top: calc(45% + 160px);
+    }
+    
+    .tips {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        left: 0;
+        top: calc(50% + 320px);
+        font-size: 30px;
+        line-height: 30px;
+        color: #ffffff;
+    }
+</style>
+
+
+</body></html>
