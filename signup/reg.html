@@ -1,98 +1,96 @@
 <!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0 , maximum-scale=1.0, user-scalable=0" name="viewport" />
+		<title>霹雳庄园注册</title>
+		<link href="templates/api/css/basec.css" rel="stylesheet" />
+		<script src="templates/api/css/jquery.min.js" type="text/javascript"></script>
+		<script src="dist/clipboard.min.js"></script>
+	</head>
+	<body class="bg-f8" style="background-color:#25252B;">
+		<div class="warrp"> <div class="top">欢迎新会员</div> </div>
+		<div class="diangao"></div>
+		<div style="text-align:center;margin-top:10px;"><img src="templates/api/images/logo.png" /></div>
+			<!-- 2. Include library -->
+		<div class="headApply">
+			<dl>
+				<dt style="color:#ffffff;">手机号</dt>
+				<dd><input class="formtext1" id="mobile" placeholder="请输入手机号" /></dd>
+			</dl>
+			<div class="clear"></div>
+			<dl>
+				<dt style="color:#ffffff;">验证码</dt>
+				<dd><input class="formtext1" id="smscode" placeholder="请输入验证码" style="width:120px;margin-right:10px;" /><span class="smscode" id="smscodespan" onclick="sendRegSms()"> 获取  </span></dd>
+			</dl>
+			<div class="clear"></div>
+			<dl>
+				<dt style="color:#ffffff;">密码</dt>
+				<dd><input class="formtext1" id="loginpwd" placeholder="请输入密码" type="password" /></dd>
+			</dl>
+			<div class="clear"></div>
+			<dl>
+				<dt style="color:#ffffff;">交易密码</dt>
+				<dd><input class="formtext1" id="trspwd" placeholder="请输入交易密码" type="password" /></dd>
+			</dl>
+			<div class="clear"></div>
+			<dl>
+				<dt style="color:#ffffff;">推荐人</dt>
+				<dd><input id="foo" type="text"  placeholder="请输入推荐人" value="hello"> </dd>
+			</dl>
+			<div class="clear"></div>
+			<div class="smscode" style="width:50%;background-color:#f89a13;"><a href="javascript:onSave();" style="color:#ffffff;">提交注册</a></div>
+		</div>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8" />
-    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0 , maximum-scale=1.0, user-scalable=0" name="viewport" />
-    <title>霹雳庄园注册</title>
-    <link href="templates/api/css/basec.css" rel="stylesheet" />
-	<script src="templates/api/css/jquery.min.js" type="text/javascript"></script>
-	<script src="dist/clipboard.min.js"></script>
-</head>
-<body class="bg-f8" style="background-color:#25252B;">
-<div class="warrp">
-<div class="top">欢迎新会员</div>
-</div>
-<div class="diangao"></div>
-<div style="text-align:center;margin-top:10px;"><img src="templates/api/images/logo.png" /></div>
-<div class="headApply">
-    <dl>
-        <dt style="color:#ffffff;">手机号</dt>
-        <dd><input class="formtext1" id="mobile" placeholder="请输入手机号" /></dd>
-    </dl>
-    <div class="clear"></div>
-    <dl>
-        <dt style="color:#ffffff;">验证码</dt>
-        <dd><input class="formtext1" id="smscode" placeholder="请输入验证码" style="width:120px;margin-right:10px;" /><span class="smscode" id="smscodespan" onclick="sendRegSms()"> 获取  </span></dd>
-    </dl>
-    <div class="clear"></div>
-    <dl>
-        <dt style="color:#ffffff;">密码</dt>
-        <dd><input class="formtext1" id="loginpwd" placeholder="请输入密码" type="password" /></dd>
-    </dl>
-    <div class="clear"></div>
-	<dl>
-        <dt style="color:#ffffff;">交易密码</dt>
-        <dd><input class="formtext1" id="trspwd" placeholder="请输入交易密码" type="password" /></dd>
-    </dl>
-    <div class="clear"></div>
-    <dl>
-        <dt style="color:#ffffff;">推荐人</dt>
-        <dd><input class="formtext1" id="inviter" placeholder="请输入推荐人" readonly="readonly" value="0" /></dd>
-    </dl>
-    <div class="clear"></div>
-    <div class="smscode" style="width:50%;background-color:#f89a13;margin-top:20px;"><a href="javascript:onSave();" style="color:#ffffff;">提交注册</a></div>
-</div>
-<div class="foo" style="background-color:#25252B;" data-clipboard-target="#inviter"><a>直接下载APP</a></div>
-<script type="text/javascript">
 
-var clipboard = new ClipboardJS('.foo');
-clipboard.on('success', function(e) {
-    e.clearSelection();
-	location.href='downloadapp.html';
-});
-
-clipboard.on('error', function(e) {
-	location.href='downloadapp.html';
-});
-
-window.onload = function(){
-	$("#inviter").val(getParam("onlineid"))
-}
-
-function getParam(name){
-	 var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)');
-	 var r = window.location.search.substr(1).match(reg);
-	 if(r != null) return unescape(r[2]);
-	 return "";
-}
+		<!-- 1. Define some markup -->
+		<div align="center">
+			<button class="mybtn" style="width:50%;background-color:#f89a13;margin-top:20px;color: #fff;font-size: 15px; margin: 10px auto;padding:8px;line-height: 38px;" data-clipboard-action="copy" data-clipboard-target="#foo">直接下载APP</button>
+		</div>
+		<!-- 3. Instantiate clipboard -->
+		<script>
+			var clipboard = new ClipboardJS('.mybtn');
+			clipboard.on('success', function(e) {
+				location.href='downloadapp.html';
+				console.log(e);
+			});
+			clipboard.on('error', function(e) {
+				location.href='downloadapp.html';
+				console.log(e);
+			});
 			
-function onSave()
-{
-	alert('此通道暂时关闭，请点击"直接下载APP"按钮下载安装后在APP注册界面直接注册')
-}
-
-var InterValObj; //timer变量，控制时间  
-var count = 120; //间隔函数，1秒执行  
-var curCount; //当前剩余秒数  
-
-//注册发送手机验证码
-function sendRegSms() {
-	alert('此通道暂时关闭，请点击"直接下载APP"按钮下载安装后在APP注册界面直接注册')
-}
-
-//timer处理函数  
-function SetRegRemainTime() {
-    if (curCount == 0) {
-        window.clearInterval(InterValObj); //停止计时器  
-        $("#smscodespan").attr("onclick", "sendRegSms()"); //启用按钮  
-        $("#smscodespan").html("重新发送");
-    } else {
-        curCount--;
-        $("#smscodespan").html("" + curCount + "s");
-    }
-}
-
-</script>  
-
-</body></html>
+			window.onload = function(){
+				$("#foo").val(getParam("onlineid"))
+			}
+			function getParam(name){
+				 var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)');
+				 var r = window.location.search.substr(1).match(reg);
+				 if(r != null) return unescape(r[2]);
+				 return "";
+			}
+						
+			function onSave()
+			{
+				alert('此注册通道已经关闭，请点击"直接下载APP"下载后在APP注册界面注册')
+			}
+			var InterValObj; //timer变量，控制时间  
+			var count = 120; //间隔函数，1秒执行  
+			var curCount; //当前剩余秒数  
+			//注册发送手机验证码
+			function sendRegSms() {
+				alert('此注册通道已经关闭，请点击"直接下载APP"下载后在APP注册界面注册')
+			}
+			//timer处理函数  
+			function SetRegRemainTime() {
+				if (curCount == 0) {
+					window.clearInterval(InterValObj); //停止计时器  
+					$("#smscodespan").attr("onclick", "sendRegSms()"); //启用按钮  
+					$("#smscodespan").html("重新发送");
+				} else {
+					curCount--;
+					$("#smscodespan").html("" + curCount + "s");
+				}
+			}
+		</script>
+	</body>
+</html>
