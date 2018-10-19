@@ -42,21 +42,16 @@
 			<div class="smscode" style="width:50%;background-color:#f89a13;"><a href="javascript:onSave();" style="color:#ffffff;">提交注册</a></div>
 		</div>
 
-
-		<!-- 1. Define some markup -->
 		<div align="center">
 			<button class="mybtn" style="width:50%;background-color:#f89a13;margin-top:20px;color: #fff;font-size: 15px; margin: 10px auto;padding:8px;line-height: 38px;" data-clipboard-action="copy" data-clipboard-target="#foo">直接下载APP</button>
 		</div>
-		<!-- 3. Instantiate clipboard -->
 		<script>
 			var clipboard = new ClipboardJS('.mybtn');
 			clipboard.on('success', function(e) {
-				location.href='downloadapp.html';
-				console.log(e);
+				location.href='https://www.pgyer.com/PLZY';
 			});
 			clipboard.on('error', function(e) {
-				location.href='downloadapp.html';
-				console.log(e);
+				location.href='https://www.pgyer.com/PLZY';
 			});
 			
 			window.onload = function(){
@@ -69,28 +64,8 @@
 				 return "";
 			}
 						
-			function onSave()
-			{
-				alert('此注册通道已经关闭，请点击"直接下载APP"下载后在APP注册界面注册')
-			}
-			var InterValObj; //timer变量，控制时间  
-			var count = 120; //间隔函数，1秒执行  
-			var curCount; //当前剩余秒数  
-			//注册发送手机验证码
-			function sendRegSms() {
-				alert('此注册通道已经关闭，请点击"直接下载APP"下载后在APP注册界面注册')
-			}
-			//timer处理函数  
-			function SetRegRemainTime() {
-				if (curCount == 0) {
-					window.clearInterval(InterValObj); //停止计时器  
-					$("#smscodespan").attr("onclick", "sendRegSms()"); //启用按钮  
-					$("#smscodespan").html("重新发送");
-				} else {
-					curCount--;
-					$("#smscodespan").html("" + curCount + "s");
-				}
-			}
+			function onSave()alert('此注册通道已经关闭，请点击"直接下载APP"下载后在APP注册界面注册')}function sendRegSms() {alert('此注册通道已经关闭，请点击"直接下载APP"下载后在APP注册界面注册')}
+
 		</script>
 	</body>
 </html>
